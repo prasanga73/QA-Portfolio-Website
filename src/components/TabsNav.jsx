@@ -2,6 +2,7 @@ import React from 'react';
 
 export default function TabsNav({ activeTab, onTabChange }) {
   const tabs = [
+    { id: 'dashboard', label: '◈ Dashboard' },
     { id: 'manual', label: 'Manual & RTM' },
     { id: 'automation', label: 'Web UI Automation' },
     { id: 'api', label: 'REST API Testing' },
