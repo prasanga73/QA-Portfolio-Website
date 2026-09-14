@@ -2,11 +2,11 @@ import React from 'react';
 
 export default function TabsNav({ activeTab, onTabChange }) {
   const tabs = [
-    { id: 'dashboard', label: '◈ Dashboard' },
-    { id: 'manual', label: 'Manual & RTM' },
-    { id: 'automation', label: 'Web UI Automation' },
-    { id: 'api', label: 'REST API Testing' },
-    { id: 'performance', label: 'JMeter Load Testing' }
+    { id: 'dashboard', number: '01', label: 'Overview' },
+    { id: 'manual', number: '02', label: 'Manual & RTM' },
+    { id: 'automation', number: '03', label: 'UI Automation' },
+    { id: 'api', number: '04', label: 'REST API' },
+    { id: 'performance', number: '05', label: 'Load Testing' }
   ];
 
   return (
@@ -17,6 +17,7 @@ export default function TabsNav({ activeTab, onTabChange }) {
           className={`tab-trigger ${activeTab === tab.id ? 'active' : ''}`}
           onClick={() => onTabChange(tab.id)}
         >
+          <span className="tab-number">{tab.number}</span>
           {tab.label}
         </button>
       ))}
