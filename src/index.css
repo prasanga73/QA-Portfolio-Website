@@ -65,6 +65,39 @@ button {
   color: inherit;
 }
 
+.pointer-trail {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.pointer-mark {
+  position: absolute;
+  color: var(--accent);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1;
+  opacity: 0;
+  text-shadow: 0 1px 8px color-mix(in srgb, var(--accent) 45%, transparent);
+  transform: translate(-50%, -50%) rotate(var(--mark-rotation)) scale(0.55);
+  animation: pointer-mark-fade 980ms ease-out forwards;
+}
+
+@keyframes pointer-mark-fade {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(var(--mark-rotation)) scale(0.75);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% - 30px)) rotate(var(--mark-rotation)) scale(1.15);
+  }
+}
+
 .container {
   width: min(100% - 48px, 980px);
   margin: 0 auto;
@@ -409,5 +442,9 @@ button {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+  }
+
+  .pointer-trail {
+    display: none;
   }
 }

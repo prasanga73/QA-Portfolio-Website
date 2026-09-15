@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import SkillsSection from './components/SkillsSection';
 import ProjectsSection from './components/ProjectsSection';
 import Footer from './components/Footer';
+import PointerTrail from './components/PointerTrail';
 
 export default function App() {
   const [theme, setTheme] = useState(() => {
@@ -25,6 +26,7 @@ export default function App() {
 
   return (
     <div className="portfolio-app">
+      <PointerTrail />
       <Header theme={theme} onThemeToggle={() => setTheme(currentTheme => currentTheme === 'dark' ? 'light' : 'dark')} />
       
       <main className="container">
