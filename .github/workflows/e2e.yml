@@ -1,0 +1,54 @@
+name: E2E tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  # Weekly run catches GitHub links that break without any change to this repo.
+  schedule:
+    - cron: '0 3 * * 1'
+  workflow_dispatch:
+
+jobs:
+  selenium:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: 21
+          cache: maven
+
+      - name: Build the site
+        run: |
+          npm ci
+          npm run build
+
+      - name: Serve the build
+        run: |
+          npm run preview &
+          for attempt in $(seq 1 30); do
+            curl -sf http://127.0.0.1:4173 > /dev/null && exit 0
+            sleep 1
+          done
+          echo "Preview server did not start" && exit 1
+
+      - name: Run Selenium suite
+        run: mvn -B -f e2e/pom.xml test -DbaseUrl=http://127.0.0.1:4173
+
+      - name: Upload test reports and failure screenshots
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: e2e-reports
+          path: |
+            e2e/target/surefire-reports
+            e2e/target/screenshots
+          if-no-files-found: ignore

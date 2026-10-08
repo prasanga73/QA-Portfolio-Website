@@ -4,12 +4,42 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prasanga Niraula · Quality Assurance & Test Automation</title>
-  <meta name="description" content="Minimalist, comprehensive Quality Assurance Portfolio of Prasanga Niraula. Manual testing, Selenium Page Object Model automation, Postman REST API testing, and Apache JMeter performance engineering." />
-  
-  <!-- Preconnect and Google Fonts: Lora, Plus Jakarta Sans, JetBrains Mono -->
+  <meta name="description" content="Prasanga Niraula is a QA engineer in Kathmandu, Nepal: manual testing with requirements traceability, Selenium automation in Java, Postman API testing, and JMeter load testing." />
+  <link rel="canonical" href="https://qa.prasanganiraula.com.np/" />
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- Link previews (LinkedIn, Slack, WhatsApp, X) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://qa.prasanganiraula.com.np/" />
+  <meta property="og:title" content="Prasanga Niraula · Quality Assurance & Test Automation" />
+  <meta property="og:description" content="Manual testing with requirements traceability, Selenium automation in Java, Postman API testing, and JMeter load testing." />
+  <meta property="og:image" content="https://qa.prasanganiraula.com.np/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Prasanga Niraula, Quality Assurance and Test Automation" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Set the theme before first paint so dark-mode visitors don't see a light flash. -->
+  <script>
+    (function () {
+      var theme;
+      try {
+        theme = localStorage.getItem('qa-portfolio-theme');
+      } catch (error) {
+        // Storage can be blocked; fall back to the system setting.
+      }
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = theme;
+    })();
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
   <div id="root"></div>

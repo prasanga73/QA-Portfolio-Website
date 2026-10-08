@@ -5,7 +5,10 @@ export const personalInfo = {
   email: "prasanganiraula2016@gmail.com",
   training: "TechAxis — Software Quality Assurance & Automation Certification",
   github: "https://github.com/prasanga73/QA-Portfolio",
-  bio: "Specializing in the disciplined intersection of manual quality engineering, maintainable UI automation frameworks, REST API contract verification, and high-concurrency load testing. Focused on precision, defect prevention, and robust test architectures."
+  linkedin: "https://www.linkedin.com/in/prasanga-niraula-7bb8242a6/",
+  resume: "/Prasanga_Niraula_QA_Resume.pdf",
+  siteRepo: "https://github.com/prasanga73/QA-Portfolio-Website",
+  bio: "Computer Engineering graduate (2026) trained in QA and automation at TechAxis. I turn requirements into traceable test cases, automate the checks worth repeating with Selenium, and find where systems break under load."
 };
 
 export const GITHUB_LINKS = {
@@ -24,13 +27,6 @@ export const GITHUB_LINKS = {
   jmeterPdf: "https://github.com/prasanga73/QA-Portfolio/blob/main/Jmeter/JmeterReportEdited.pdf",
   jmeterJmx: "https://github.com/prasanga73/QA-Portfolio/blob/main/Jmeter/QA%20TechAxis.jmx"
 };
-
-export const metrics = [
-  { label: "Documented Test Cases", value: "52", note: "36 Daraz + 16 Enterprise Auth/AppSec" },
-  { label: "JMeter Requests Benchmarked", value: "20,000", note: "Up to 200 concurrent threads" },
-  { label: "Requirement Traceability Coverage", value: "100%", note: "Verified against REQ-DZ-SEARCH-01 (17 Scenarios)" },
-  { label: "Automated API Endpoints Tested", value: "14", note: "CRUD, Chained JWT & JSON Schema" }
-];
 
 export const darazTestCases = [
   {
@@ -714,8 +710,6 @@ export const secondTestCases = [
   }
 ];
 
-export const manualTestCases = [...darazTestCases, ...secondTestCases];
-
 export const jmeterScenarios = [
   {
     id: "Scenario 1",
@@ -794,13 +788,44 @@ export const jmeterScenarios = [
   }
 ];
 
-export const apiEndpoints = [
-  { method: "GET", path: "/categories", name: "List Categories", purpose: "Fetches category taxonomy; asserts 200 OK and non-empty list." },
-  { method: "GET", path: "/products/?price=100", name: "Filter by Price", purpose: "Validates query string parsing and price filter boundaries." },
-  { method: "GET", path: "/products", name: "JSON Schema Validation", purpose: "Validates payload structure and property types against draft-07 JSON Schema." },
-  { method: "POST", path: "/products/", name: "Create Product", purpose: "Pre-request script generates unique title; captures response ID to collection variable." },
-  { method: "PUT", path: "/products/:id", name: "Update Product", purpose: "Modifies attributes of created item; asserts 200 OK and updated fields." },
-  { method: "DELETE", path: "/products/:id", name: "Delete Product", purpose: "Removes test item; asserts successful boolean deletion flag." },
-  { method: "POST", path: "/auth/login", name: "JWT Authentication", purpose: "Submits credentials; extracts access_token for downstream bearer authorization." },
-  { method: "GET", path: "/auth/profile", name: "Authenticated Profile", purpose: "Chains extracted JWT token in Bearer header; verifies user identity." }
+export const apiRequests = [
+  { method: "GET", path: "/products", name: "List products" },
+  { method: "GET", path: "/products/?price=100", name: "Filter by price" },
+  { method: "GET", path: "/products", name: "JSON Schema check" },
+  { method: "GET", path: "/products", name: "Status, latency and field checks" },
+  { method: "GET", path: "/products/{id}", name: "Product by ID" },
+  { method: "GET", path: "/products/slug/{slug}", name: "Product by slug" },
+  { method: "POST", path: "/products/", name: "Create product" },
+  { method: "PUT", path: "/products/{productId}", name: "Update product" },
+  { method: "DELETE", path: "/products/{id}", name: "Delete product" },
+  { method: "GET", path: "/products?offset=0&limit=10", name: "Pagination" },
+  { method: "GET", path: "/products/{id}/related", name: "Related by ID" },
+  { method: "GET", path: "/products/{slug}/related", name: "Related by slug" },
+  { method: "POST", path: "/auth/login", name: "JWT login" },
+  { method: "GET", path: "/auth/profile", name: "Profile with bearer token" }
+];
+
+export const darazRequirementCount = new Set(darazTestCases.map(testCase => testCase.reqId)).size;
+
+export const metrics = [
+  {
+    value: String(darazTestCases.length + secondTestCases.length),
+    label: "manual test cases",
+    note: `${darazTestCases.length} Daraz search + ${secondTestCases.length} auth and security`
+  },
+  {
+    value: String(darazRequirementCount),
+    label: "requirements traced",
+    note: "Every Daraz test case mapped to a requirement"
+  },
+  {
+    value: String(apiRequests.length),
+    label: "automated API requests",
+    note: "CRUD, schema checks and a chained JWT login"
+  },
+  {
+    value: Math.max(...jmeterScenarios.map(scenario => scenario.samples)).toLocaleString("en-US"),
+    label: "requests load-tested",
+    note: `Up to ${Math.max(...jmeterScenarios.map(scenario => scenario.threads))} concurrent threads in JMeter`
+  }
 ];

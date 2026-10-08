@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Portfolio Site Suite">
+    <test name="Portfolio Site">
+        <classes>
+            <class name="portfolio.tests.NavigationTest"/>
+            <class name="portfolio.tests.ThemeTest"/>
+            <class name="portfolio.tests.ContentTest"/>
+            <class name="portfolio.tests.ResponsiveTest"/>
+            <class name="portfolio.tests.AccessibilityTest"/>
+            <class name="portfolio.tests.LinksTest"/>
+        </classes>
+    </test>
+</suite>

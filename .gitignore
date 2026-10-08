@@ -1,0 +1,15 @@
+# Dependencies and build output
+node_modules/
+dist/
+
+# Selenium suite build output
+e2e/target/
+
+# Local environment and tooling
+.env
+.env.local
+.vercel/
+*.log
+.DS_Store
+.idea/
+.vscode/
