@@ -23,7 +23,7 @@ const projects = [
     tools: 'Manual testing, requirements traceability, functional testing',
     outcome: 'Documented search, suggestion, filtering, sorting, edge-case, and empty-state coverage, with every test case traced to a requirement.',
     approach: [
-      `Mapped each test case to one of ${darazRequirementCount} requirements (REQ-01 to REQ-${darazRequirementCount}) from the Daraz search specification in a traceability matrix.`,
+      `Traced each test case to one of ${darazRequirementCount} requirements (REQ-01 to REQ-${darazRequirementCount}) from the Daraz search specification.`,
       'Covered single and combined filters (price range, brand, rating, location, free shipping), five sort orders, and pagination.',
       'Checked edge cases: lowercase, uppercase and mixed-case keywords, and the “No results found” state with suggested alternatives.'
     ],
@@ -41,13 +41,14 @@ const projects = [
     outcome: 'Audited validation, inactivity timeouts, SQL injection, XSS, brute-force protection, and password handling.',
     approach: [
       'Covered valid, invalid and empty usernames and passwords, plus email login and the post-login redirect.',
-      <>Sent SQL injection (<code>' OR 1=1 --</code>) and XSS (<code>{'<script>alert(1)</script>'}</code>) payloads through the login fields.</>,
+      <>Sent SQL injection (<code>' OR '1'='1</code>) and XSS (<code>{"<script>alert('XSS')</script>"}</code>) payloads through the login fields.</>,
       'Verified account lockout after repeated failed attempts, session expiry after inactivity, and password masking.'
     ],
     featuredTestCase: findTestCase(secondTestCases, 'TC-09'),
     testCases: secondTestCases,
     links: [
-      { label: 'Test suite', href: GITHUB_LINKS.securityExcel }
+      { label: 'Test cases', href: GITHUB_LINKS.securityExcel },
+      { label: 'Test data', href: GITHUB_LINKS.securityTestData }
     ]
   },
   {
@@ -57,10 +58,10 @@ const projects = [
     outcome: 'Built maintainable browser suites for SauceDemo and AutomationExercise with reusable pages and HTML reporting.',
     approach: [
       'SauceDemo: tested all 9 combinations of valid, invalid and empty credentials, asserting the exact error message for each.',
-      'SauceDemo: checked cart state, so adding a product switches its button to “Remove” and removing it switches it back.',
+      'SauceDemo: tested the cart end to end: adding every product and confirming each one appears in the cart, removing items, Continue Shopping, and checkout.',
+      'SauceDemo: checked that checkout is blocked with an empty cart and that each product title in the cart opens its product page. Cart tests are tagged smoke and regression in TestNG.',
       'AutomationExercise: covered registration, valid and invalid login, logout, and registering with an existing email.',
-      'A TestNG listener captures a screenshot when a test fails and embeds it in an ExtentReports 5 HTML report.',
-      <>Runs in headless Chrome (<code>--headless=new</code>, <code>--no-sandbox</code>, <code>--disable-dev-shm-usage</code>) so it works in CI.</>
+      'A TestNG listener captures a screenshot when a test fails and embeds it in an ExtentReports 5 HTML report.'
     ],
     loginMatrix: true,
     links: [

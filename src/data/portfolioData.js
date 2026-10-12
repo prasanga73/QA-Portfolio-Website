@@ -13,19 +13,20 @@ export const personalInfo = {
 
 export const GITHUB_LINKS = {
   repo: "https://github.com/prasanga73/QA-Portfolio",
-  manualDarazDir: "https://github.com/prasanga73/QA-Portfolio/tree/main/Manual%20Test%20Cases%20/Daraz%20Manual",
-  darazExcel: "https://github.com/prasanga73/QA-Portfolio/blob/main/Manual%20Test%20Cases%20/Daraz%20Manual/DarazTestCases.xlsx",
-  darazPdf: "https://github.com/prasanga73/QA-Portfolio/blob/main/Manual%20Test%20Cases%20/Daraz%20Manual/Requirements_Daraz_Search_Feature-239963.pdf",
-  manualSecurityDir: "https://github.com/prasanga73/QA-Portfolio/tree/main/Manual%20Test%20Cases%20/Second",
-  securityExcel: "https://github.com/prasanga73/QA-Portfolio/blob/main/Manual%20Test%20Cases%20/Second/AssignmentEdited.xlsx",
-  sauceDemoDir: "https://github.com/prasanga73/QA-Portfolio/tree/main/Automation/AutomationExam",
-  automationExerciseDir: "https://github.com/prasanga73/QA-Portfolio/tree/main/Automation/AutomationQA/AutomationExercises",
-  automationReport: "https://github.com/prasanga73/QA-Portfolio/blob/main/Automation/AutomationQA/AutomationExercises/reports/Test-Report-2026.09.11.14.35.43.html",
-  apiTestingDir: "https://github.com/prasanga73/QA-Portfolio/tree/main/API%20Testing",
-  postmanCollection: "https://github.com/prasanga73/QA-Portfolio/blob/main/API%20Testing/Platzi%20API.postman_collection.json",
-  jmeterDir: "https://github.com/prasanga73/QA-Portfolio/tree/main/Jmeter",
-  jmeterPdf: "https://github.com/prasanga73/QA-Portfolio/blob/main/Jmeter/JmeterReportEdited.pdf",
-  jmeterJmx: "https://github.com/prasanga73/QA-Portfolio/blob/main/Jmeter/QA%20TechAxis.jmx"
+  manualDarazDir: "https://github.com/prasanga73/QA-Portfolio/tree/main/01-manual-testing/daraz-search-feature",
+  darazExcel: "https://github.com/prasanga73/QA-Portfolio/blob/main/01-manual-testing/daraz-search-feature/DarazTestCases.xlsx",
+  darazPdf: "https://github.com/prasanga73/QA-Portfolio/blob/main/01-manual-testing/daraz-search-feature/Requirements_Daraz_Search_Feature-239963.pdf",
+  manualSecurityDir: "https://github.com/prasanga73/QA-Portfolio/tree/main/01-manual-testing/login-auth-security",
+  securityExcel: "https://github.com/prasanga73/QA-Portfolio/blob/main/01-manual-testing/login-auth-security/LoginAuthTestCases.xlsx",
+  securityTestData: "https://github.com/prasanga73/QA-Portfolio/blob/main/01-manual-testing/login-auth-security/login-test-data.csv",
+  sauceDemoDir: "https://github.com/prasanga73/QA-Portfolio/tree/main/02-ui-automation/saucedemo-suite",
+  automationExerciseDir: "https://github.com/prasanga73/QA-Portfolio/tree/main/02-ui-automation/automation-exercise-suite",
+  automationReport: "https://github.com/prasanga73/QA-Portfolio/blob/main/02-ui-automation/automation-exercise-suite/reports/Test-Report-2026.09.11.14.35.43.html",
+  apiTestingDir: "https://github.com/prasanga73/QA-Portfolio/tree/main/03-api-testing",
+  postmanCollection: "https://github.com/prasanga73/QA-Portfolio/blob/main/03-api-testing/platzi-fake-store-api.postman_collection.json",
+  jmeterDir: "https://github.com/prasanga73/QA-Portfolio/tree/main/04-performance-testing",
+  jmeterPdf: "https://github.com/prasanga73/QA-Portfolio/blob/main/04-performance-testing/jmeter-performance-report.pdf",
+  jmeterJmx: "https://github.com/prasanga73/QA-Portfolio/blob/main/04-performance-testing/remoteaxle-auth-load-test.jmx"
 };
 
 export const darazTestCases = [
